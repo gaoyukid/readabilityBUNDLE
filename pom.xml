@@ -4,7 +4,7 @@
 
 	<groupId>com.sree.textbytes</groupId>
 	<artifactId>readabilityBUNDLE</artifactId>
-	<version>0.0.1</version>
+	<version>trunk</version>
 	<packaging>jar</packaging>
 
 	<name>readabilityBUNDLE</name>
