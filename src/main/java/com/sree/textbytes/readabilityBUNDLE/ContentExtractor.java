@@ -5,22 +5,20 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.jsoup.select.Selector;
 
-import com.sree.textbytes.readabilityBUNDLE.image.BestImageGuesser;
-import com.sree.textbytes.readabilityBUNDLE.Article;
+import com.sree.textbytes.StringHelpers.StringSplitter;
+import com.sree.textbytes.StringHelpers.string;
 import com.sree.textbytes.readabilityBUNDLE.cleaner.DocumentCleaner;
 import com.sree.textbytes.readabilityBUNDLE.extractor.GooseExtractor;
 import com.sree.textbytes.readabilityBUNDLE.extractor.ReadabilityExtractor;
 import com.sree.textbytes.readabilityBUNDLE.extractor.ReadabilitySnack;
 import com.sree.textbytes.readabilityBUNDLE.formatter.DocumentFormatter;
-import com.sree.textbytes.StringHelpers.StringSplitter;
-import com.sree.textbytes.StringHelpers.string;
+import com.sree.textbytes.readabilityBUNDLE.image.BestImageGuesser;
 
 /**
  * Original code from Project Goose
@@ -289,7 +287,8 @@ public class ContentExtractor {
 			}
 
 			// encode unicode charz
-			title = StringEscapeUtils.escapeHtml(titleText);
+//			title = StringEscapeUtils.escapeHtml(titleText);
+			title = titleText;
 			title = Patterns.MOTLEY_REPLACEMENT.replaceAll(title);
 
 		} catch (NullPointerException e) {
