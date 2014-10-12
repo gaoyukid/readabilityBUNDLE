@@ -15,6 +15,7 @@ import com.sree.textbytes.StringHelpers.StringSplitter;
 import com.sree.textbytes.StringHelpers.string;
 import com.sree.textbytes.readabilityBUNDLE.cleaner.DocumentCleaner;
 import com.sree.textbytes.readabilityBUNDLE.extractor.GooseExtractor;
+import com.sree.textbytes.readabilityBUNDLE.extractor.ReadabilityCommaLength;
 import com.sree.textbytes.readabilityBUNDLE.extractor.ReadabilityExtractor;
 import com.sree.textbytes.readabilityBUNDLE.extractor.ReadabilitySnack;
 import com.sree.textbytes.readabilityBUNDLE.formatter.DocumentFormatter;
@@ -116,6 +117,9 @@ public class ContentExtractor {
 				}else if(extractionAlgorithm.equalsIgnoreCase("ReadabilityGoose")) {
 					GooseExtractor gooseExtractor = new GooseExtractor();
 					article.setTopNode(gooseExtractor.grabArticle(article));
+				}else if(extractionAlgorithm.equalsIgnoreCase("ReadabilityCommaLength")) {
+					ReadabilityCommaLength readabilityCommaLength = new ReadabilityCommaLength();
+					article.setTopNode(readabilityCommaLength.grabArticle(article));
 				}
 			}else {
 				logger.debug("No ALgorithm set by default , proceeding with Readability Snack");
